@@ -110,7 +110,7 @@ This system supports two TG trading bots (`@SigmaTrading7_bot` and `@based_eth_b
 
 BasedBot also supports multiple chains and is not limited to XLayer. For supported chains, fees, and features, always follow the latest official bot information.
 
-### `@SigmaTrading7_bot` (BSC)
+### `@SigmaTrading7_bot` (SOL/BSC)
 
 1. Search `@SigmaTrading7_bot` in Telegram -> `/start`
 2. Complete account and wallet setup
@@ -122,7 +122,7 @@ Recommended usage: prioritize `BSC` and `Solana` (SOL) trading scenarios.
 
 > Auto Buy must be enabled, otherwise pushed token addresses will not trigger purchases.
 
-### `@based_eth_bot` (XLayer)
+### `@based_eth_bot` (Base/XLayer)
 
 1. Search `@based_eth_bot` in Telegram -> `/start`
 2. Complete account and trading parameter setup

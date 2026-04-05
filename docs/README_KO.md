@@ -110,7 +110,7 @@ ws_url = wss://your-purchased-websocket-url
 
 BasedBot 역시 다중 체인을 지원하며 XLayer 전용이 아닙니다. 지원 체인, 수수료, 기능은 Bot 공식 최신 안내를 기준으로 확인하세요.
 
-### `@SigmaTrading7_bot` (BSC)
+### `@SigmaTrading7_bot` (SOL/BSC)
 
 1. Telegram에서 `@SigmaTrading7_bot` 검색 -> `/start`
 2. 계정, 지갑 등 기본 설정 완료
@@ -122,7 +122,7 @@ BasedBot 역시 다중 체인을 지원하며 XLayer 전용이 아닙니다. 지
 
 > 자동 구매가 활성화되지 않으면 푸시된 토큰 주소가 매수를 트리거하지 않습니다.
 
-### `@based_eth_bot` (XLayer)
+### `@based_eth_bot` (Base/XLayer)
 
 1. Telegram에서 `@based_eth_bot` 검색 -> `/start`
 2. 계정 및 거래 매개변수 설정 완료

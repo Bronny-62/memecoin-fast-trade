@@ -110,7 +110,7 @@ ws_url = wss://your-purchased-websocket-url
 
 其中 BasedBot 同样支持多条链，并不只限于 XLayer；具体支持链、费率和功能请以 Bot 官方最新信息为准。
 
-### `@SigmaTrading7_bot`（BSC）
+### `@SigmaTrading7_bot`（SOL/BSC）
 
 1. Telegram 搜索 `@SigmaTrading7_bot` -> `/start`
 2. 完成账户、钱包等基础设置
@@ -122,7 +122,7 @@ ws_url = wss://your-purchased-websocket-url
 
 > 未开启自动购买时，系统推送的代币地址不会触发买入。
 
-### `@based_eth_bot`（XLayer）
+### `@based_eth_bot`（Base/XLayer）
 
 1. Telegram 搜索 `@based_eth_bot` -> `/start`
 2. 完成账户与交易参数配置

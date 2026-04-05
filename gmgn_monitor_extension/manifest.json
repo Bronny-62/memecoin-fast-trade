@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "gmgn_monitor_extension",
+  "version": "1.0",
+  "description": "Intercept gmgn.ai websocket data and forward to local trade script.",
+  "permissions": [
+    "sidePanel",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://gmgn.ai/*",
+    "http://localhost/*",
+    "ws://localhost/*"
+  ],
+  "action": {
+    "default_title": "Open gmgn_monitor_extension"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gmgn.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injector.js"],
+      "matches": ["https://gmgn.ai/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
+

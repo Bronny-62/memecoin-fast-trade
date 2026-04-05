@@ -1,0 +1,22 @@
+{
+  "配置说明": {
+    "要求 / Requirement": "监控用户名请使用其推特ID（例如 @elonmusk），具体示例如下 / Use Twitter IDs for monitored users (e.g. @elonmusk), see examples below",
+    "备注 / Note": "用户名在加载时会统一转为小写并支持热重载 / Usernames are normalized to lowercase on load and support hot reload"
+  },
+  "SigmaBot_T0_Users": [
+    "elonmusk",
+    "realdonaldtrump",
+    "cz_binance"
+  ],
+  "SigmaBot_T1_Users": [
+    "solana",
+    "binance"
+  ],
+  "BasedBot_T0_Users": [
+    "vitalikbuterin",
+    "star_okx"
+  ],
+  "BasedBot_T1_Users": [
+    "okx"
+  ]
+}

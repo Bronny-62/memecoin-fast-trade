@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #0f172a;
+      --panel-border: #1f2a44;
+      --text-main: #dbe7ff;
+      --text-sub: #8ea3c7;
+      --accent: #22d3ee;
+      --accent-strong: #00e676;
+      --danger: #f87171;
+      --warning: #ffb020;
+      --log-bg: #0a1020;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'SFMono-Regular', 'Consolas', 'Menlo', monospace;
+      margin: 0;
+      padding: 12px;
+      background: radial-gradient(circle at top right, #11203f 0%, var(--bg) 45%);
+      color: var(--text-main);
+      font-size: 12px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #101b33 0%, var(--panel) 100%);
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--panel-border);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+      font-size: 11px;
+      color: var(--text-sub);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #6b7b9a;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .dot.green {
+      background-color: var(--accent-strong);
+      box-shadow: 0 0 8px rgba(0, 230, 118, 0.6);
+    }
+
+    .dot.red {
+      background-color: var(--danger);
+      box-shadow: 0 0 8px rgba(248, 113, 113, 0.45);
+    }
+
+    .dot.orange {
+      background-color: var(--warning);
+      box-shadow: 0 0 8px rgba(255, 176, 32, 0.45);
+    }
+
+    .connection-buttons {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .metrics {
+      margin: 8px 0 12px;
+    }
+
+    .metric-row {
+      font-size: 11px;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .metric-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .metric-label {
+      color: var(--text-sub);
+    }
+
+    .metric-value {
+      color: var(--accent-strong);
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    #logs {
+      height: 300px;
+      overflow-y: auto;
+      background: var(--log-bg);
+      color: #c7d3eb;
+      padding: 9px;
+      border-radius: 8px;
+      border: 1px solid #1b2946;
+      white-space: pre-wrap;
+      font-size: 10px;
+    }
+
+    .log-entry {
+      margin-bottom: 6px;
+      border-bottom: 1px solid #1c2945;
+      padding-bottom: 4px;
+    }
+
+    .log-time {
+      color: #7e90b8;
+      margin-right: 4px;
+    }
+
+    .log-prefix {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .btn {
+      background: linear-gradient(180deg, #173662 0%, #12294b 100%);
+      color: #dff5ff;
+      border: 1px solid #29548e;
+      padding: 7px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 11px;
+      flex: 1;
+      transition: all 0.15s ease;
+      letter-spacing: 0.2px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(180deg, #1b447b 0%, #16365f 100%);
+      border-color: #3470b8;
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: linear-gradient(180deg, #22314f 0%, #1b2942 100%);
+      color: #d2ddf4;
+      border-color: #31496e;
+    }
+
+    .btn.secondary:hover {
+      background: linear-gradient(180deg, #2a3e65 0%, #223553 100%);
+      border-color: #3d5d8f;
+    }
+
+    .copy-btn {
+      background-color: #1f3559;
+      color: #d7e6ff;
+      border: 1px solid #355786;
+      font-size: 10px;
+      padding: 2px 6px;
+      margin-top: 2px;
+      width: auto;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Backend Connection</h2>
+    <div class="status">
+      <span id="trade-dot" class="dot"></span>
+      <span id="trade-status">Trade System (8051): Disconnected</span>
+    </div>
+    <div class="connection-buttons">
+      <button id="connect-trade-btn" class="btn">Trade System Connect</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>GMGN.ai Interceptor</h2>
+    <div class="status">
+      <span id="page-dot" class="dot"></span>
+      <span id="page-status">Waiting for page...</span>
+    </div>
+    <div class="status">
+      <span id="injector-dot" class="dot"></span>
+      <span id="injector-status">Injector: Pending</span>
+    </div>
+    <div class="metrics">
+      <div class="metric-row">
+        <span class="metric-label">Relevant Messages:</span>
+        <span id="msg-count" class="metric-value">0</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Filtered (noise):</span>
+        <span id="filtered-count" class="metric-value">0</span>
+      </div>
+    </div>
+    <button id="clear-logs" class="btn secondary">Clear Logs</button>
+  </div>
+
+  <div class="card">
+    <h2>Live Data Stream</h2>
+    <div id="logs"></div>
+  </div>
+
+  <script src="side_panel.js"></script>
+</body>
+</html>

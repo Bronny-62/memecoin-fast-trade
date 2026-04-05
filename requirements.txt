@@ -1,0 +1,12 @@
+fastapi>=0.104.1
+uvicorn>=0.24.0
+pydantic>=2.5.0
+colorama>=0.4.6
+asyncio-throttle>=1.0.2
+telethon>=1.34.0
+websockets>=12.0
+requests>=2.31.0
+eth-account>=0.9.0
+web3>=6.0.0
+pyahocorasick>=2.2.0
+python-socks[asyncio]>=2.4.3

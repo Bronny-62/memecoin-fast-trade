@@ -1,0 +1,21 @@
+{
+  "配置说明": {
+    "示例 / Example": "请见下方关键词与代币地址映射示例 / See examples below for keyword-to-token-address mapping",
+    "规则 / Rules": "BSC 使用 SigmaBot_* 键，XLayer 使用 BasedBot_* 键，关键词匹配默认大小写不敏感 / Use SigmaBot_* keys for BSC and BasedBot_* keys for XLayer; keyword matching is case-insensitive by default"
+  },
+  "SigmaBot_T0_KEYS": {
+    "LABUBU": "JB2wezZLdzWfnaCfHxLg193RS3Rh51ThiXxEDWQDpump",
+    "币安人生": "0x924fa68a0fc644485b8df8abfa0a41c2e7744444"
+  },
+  "SigmaBot_T1_KEYS": {
+    "MASK": "6MQpbiTC2YcogidTmKqMLK82qvE9z5QEm7EP3AEDpump",
+    "BNBHolder": "0x44440f83419de123d7d411187adb9962db017d03"
+  },
+  "BasedBot_T0_KEYS": {
+    "XDOG": "0x0cc24c51bf89c00c5affbfcf5e856c25ecbdb48e"
+  },
+  "BasedBot_T1_KEYS": {
+    "MAKE OKX GREAT AGAIN": "0xfa966a1302e3c49872131999b80a5b9f11e5c336",
+    "DOGSHIT": "0x70bf3e2b75d8832d7f790a87fffc1fa9d63dc5bb"
+  }
+}

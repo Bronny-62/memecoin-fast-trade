@@ -1,0 +1,29 @@
+[Telegram]
+# 登录 my.telegram.org 获取 / Get from my.telegram.org
+api_id = 
+api_hash = 
+
+# 接收代币地址的目标机器人用户名 (例如 @SigmaTcBot) / Target bot username for token address dispatch (e.g. @SigmaTcBot)
+# sigma_bot 用于BSC链交易 / sigma_bot is used for BSC trading
+sigma_bot_username = @SigmaTrading7_bot
+sigma_bot_id = 6999602622
+
+# BasedBot 用于XLayer链交易 / BasedBot is used for XLayer trading
+BasedBot_username = @based_eth_bot
+BasedBot_id = 7424144563
+
+# Proxy配置 (VPN环境下可选配置，主要目的是Telegram的正常联通) / Optional proxy settings for Telegram connectivity
+# 支持类型: socks5, socks4, http / Supported types: socks5, socks4, http
+# 留空或注释掉则不使用代理 / Leave empty or comment out to disable proxy
+# proxy_type = socks5
+# proxy_addr = 127.0.0.1
+# proxy_port = 1082
+
+[Source]
+# 1fastx.com秒级推特监控 WebSocket 源 / Sub-second Twitter monitoring WebSocket source from 1fastx.com
+ws_url =
+
+[Server]
+# GMGN推特监控信号监听系统端口号 / Listening port for GMGN Twitter monitoring service
+listen_port = 8051
+

@@ -1,0 +1,17 @@
+# 虚拟环境
+.venv/
+
+# Telethon 会话文件
+*.session
+*.session-journal
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 日志文件
+*.log
+logs/
+
+# 系统文件
+.DS_Store 
